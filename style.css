@@ -1,0 +1,90 @@
+/**************************************
+LAYOUT CSS
+**************************************/
+
+.wrapper {
+  max-width: 900px;
+  margin: 50px auto;
+}
+
+/**************************************
+CSS TO MAKE THE EXAMPLE LOOK PRETTY
+**************************************/
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background: #FFF;
+  color: #FFF;
+  font-family: 'Open Sans';
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+}
+
+.one, .two, .three, .four, .five, .six, .seven {
+  background-color: #163A59;
+  color: #FF6600;
+  border: 2px solid;
+  box-sizing: border-box;
+  min-height: 100px;
+  line-height: 100px;
+}
+
+/** grid pratice */
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media screen and (min-width: 576px) {
+  .wrapper {
+    grid-template-columns: 1fr 1fr; 
+  }
+  
+  .one {
+    grid-column: 1 / span 2;
+  }
+  
+  .four {
+    grid-column: 1 / span 2;
+  }
+  
+  .seven {
+    grid-column: 1 / span 2;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .wrapper {
+    grid-template-columns: repeat(4, 25%);
+  }
+  .one {
+    grid-column: 1 / span 1;
+  }
+  
+  .two {
+    grid-column: 2 / span 3;
+  }
+  
+  .three {
+    grid-column: 1 / span 2;
+  }
+  
+  .four {
+    grid-column: span 2 / 5;
+  }
+  
+  .five {
+    grid-column: span 3 / 4;
+  }
+  
+  .seven {
+    grid-column: -5 / span 4;
+  }
+}
